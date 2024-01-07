@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
 
 public class MedianOfTwoSortedArrays {
     public static void main(String[] args) {
@@ -32,8 +31,7 @@ public class MedianOfTwoSortedArrays {
         mediana = (mergedArrays.length / 2);
 
         if (medianaExacta(mediana)) {
-            int medianaInt = (int) mediana;
-            return mergedArrays[medianaInt];
+            return mergedArrays[(int) mediana];
         } else {
             // Si no hay mitad exacta, sacamos la media de los dos numeros
             return (mergedArrays[mergedArrays.length / 2] + mergedArrays[(mergedArrays.length / 2) + 1]) / 2;
