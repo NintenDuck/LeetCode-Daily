@@ -11,38 +11,39 @@ public class MedianOfTwoSortedArrays {
                         + MedianOfTwoArrays(new float[] { 1.0f, 2.0f }, new float[] { 3.0f, 4.0f }));
     }
 
+    /**
+     * @param array1
+     * @param array2
+     * @return median of the two arrays
+     */
     private static float MedianOfTwoArrays(float[] array1, float[] array2) {
         System.out.println("========================================");
-        // Sumamos ambos arreglos
         float[] mergedArrays = new float[array1.length + array2.length];
         float mediana = 0.0f;
-
+        
+        // Sumamos ambos arreglos
         System.arraycopy(array1, 0, mergedArrays, 0, array1.length);
         System.arraycopy(array2, 0, mergedArrays, array1.length, array2.length);
-        // for (float num : mergedArrays) {
-        // System.out.println(num);
-        // }
 
         // Ordenamos los arreglos
         Arrays.sort(mergedArrays);
 
-        // for (float number : mergedArrays) {
-        // System.out.println(number);
-        // }
-
-        // Deacuerdo al tamaño, sacar la media
+        // Deacuerdo al tamaño, sacar la mediana
         mediana = (mergedArrays.length / 2);
-        System.out.println("Mediana: " + mediana);
 
-        // TODO: HACER RETURN CORRECTO
         if (medianaExacta(mediana)) {
-            return mediana;
+            int medianaInt = (int) mediana;
+            return mergedArrays[medianaInt];
         } else {
             // Si no hay mitad exacta, sacamos la media de los dos numeros
-            return (mergedArrays[mergedArrays.length/2] + mergedArrays[(mergedArrays.length/2) + 1]) / 2;
+            return (mergedArrays[mergedArrays.length / 2] + mergedArrays[(mergedArrays.length / 2) + 1]) / 2;
         }
     }
 
+    /**
+     * @param mediana
+     * @return true or false depending on result
+     */
     private static boolean medianaExacta(float mediana) {
         return mediana - (int) mediana == 0 ? true : false;
     }
