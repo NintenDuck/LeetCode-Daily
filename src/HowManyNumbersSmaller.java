@@ -50,10 +50,8 @@ public class HowManyNumbersSmaller {
 
         for (int currentNumber = 0; currentNumber < nums.length; currentNumber++) {
             for (int comparingNumber = 0; comparingNumber < nums.length; comparingNumber++) {
-                if (comparingNumber != currentNumber) {
-                    if (nums[comparingNumber] < nums[currentNumber]) {
-                        numsSmaller[currentNumber] += 1;
-                    }
+                if (comparingNumber != currentNumber & nums[comparingNumber] < nums[currentNumber]) {
+                    numsSmaller[currentNumber] += 1;
                 }
             }
         }
