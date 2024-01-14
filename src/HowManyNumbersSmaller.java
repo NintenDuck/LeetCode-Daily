@@ -39,7 +39,7 @@ public class HowManyNumbersSmaller {
         for (int number : smallerNumbersThanCurrent(numbers2)) {
             System.out.println(number);
         }
-        int[] numbers3 = new int[] { 7,7,7,7 };
+        int[] numbers3 = new int[] { 7, 7, 7, 7 };
         for (int number : smallerNumbersThanCurrent(numbers3)) {
             System.out.println(number);
         }
@@ -48,14 +48,13 @@ public class HowManyNumbersSmaller {
     private static int[] smallerNumbersThanCurrent(int[] nums) {
         int[] numsSmaller = new int[nums.length];
 
-        for (int currentNumber = 0; currentNumber < nums.length; currentNumber++) {
-            for (int comparingNumber = 0; comparingNumber < nums.length; comparingNumber++) {
-                if (comparingNumber != currentNumber & nums[comparingNumber] < nums[currentNumber]) {
-                    numsSmaller[currentNumber] += 1;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if (j != i & nums[j] < nums[i]) {
+                    numsSmaller[i] += 1;
                 }
             }
         }
-
         return numsSmaller;
     }
 }
