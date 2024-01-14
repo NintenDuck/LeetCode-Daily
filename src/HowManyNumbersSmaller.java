@@ -48,6 +48,10 @@ public class HowManyNumbersSmaller {
     private static int[] smallerNumbersThanCurrent(int[] nums) {
         int[] numsSmaller = new int[nums.length];
 
+        if (nums.length == 0) {
+            return new int[]{};
+        }
+
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
                 if (j != i & nums[j] < nums[i]) {
